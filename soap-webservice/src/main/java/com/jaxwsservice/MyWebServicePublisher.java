@@ -11,7 +11,7 @@ public class MyWebServicePublisher {
         //WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
         //WARNING: All illegal access operations will be denied in a future release
 
-        Endpoint.publish("http://localhost:8080/webservice/greeting",
+        Endpoint.publish("http://localhost:8081/webservice/greeting",
                 new MyWebServiceImplementation());
     }
 }
