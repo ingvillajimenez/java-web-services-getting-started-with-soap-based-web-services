@@ -65,11 +65,11 @@ public class MyWebServiceImplementationService
     /**
      * 
      * @return
-     *     returns MyWebServiceImplementation
+     *     returns MyWebServiceInterface
      */
     @WebEndpoint(name = "MyWebServiceImplementationPort")
-    public MyWebServiceImplementation getMyWebServiceImplementationPort() {
-        return super.getPort(new QName("http://jaxwsservice.com/", "MyWebServiceImplementationPort"), MyWebServiceImplementation.class);
+    public MyWebServiceInterface getMyWebServiceImplementationPort() {
+        return super.getPort(new QName("http://jaxwsservice.com/", "MyWebServiceImplementationPort"), MyWebServiceInterface.class);
     }
 
     /**
@@ -77,11 +77,11 @@ public class MyWebServiceImplementationService
      * @param features
      *     A list of {@link jakarta.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
      * @return
-     *     returns MyWebServiceImplementation
+     *     returns MyWebServiceInterface
      */
     @WebEndpoint(name = "MyWebServiceImplementationPort")
-    public MyWebServiceImplementation getMyWebServiceImplementationPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://jaxwsservice.com/", "MyWebServiceImplementationPort"), MyWebServiceImplementation.class, features);
+    public MyWebServiceInterface getMyWebServiceImplementationPort(WebServiceFeature... features) {
+        return super.getPort(new QName("http://jaxwsservice.com/", "MyWebServiceImplementationPort"), MyWebServiceInterface.class, features);
     }
 
     private static URL __getWsdlLocation() {

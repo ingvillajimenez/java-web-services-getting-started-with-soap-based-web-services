@@ -1,17 +1,26 @@
 package com.jaxwsservice;
 
-import jakarta.jws.WebMethod; // @interface WebMethod
+//import jakarta.jws.WebMethod; // @interface WebMethod
 import jakarta.jws.WebService; // @interface WebService
 
-@WebService
-public class MyWebServiceImplementation {
+@WebService(endpointInterface = "com.jaxwsservice.MyWebServiceInterface")
+public class MyWebServiceImplementation implements MyWebServiceInterface {
 
-    @WebMethod
-    public String myGreetingMessage(String myStr) {
-
-        return "Hello, " + myStr + ". Welcome to the world of Web Services!";
+    @Override
+    public String myGreetingMessage(String mystr) {
+        return "Hello, " + mystr + ". Welcome to the world of Web Services!";
     }
 }
+
+//@WebService
+//public class MyWebServiceImplementation {
+//
+//    @WebMethod
+//    public String myGreetingMessage(String myStr) {
+//
+//        return "Hello, " + myStr + ". Welcome to the world of Web Services!";
+//    }
+//}
 
 // Older Tomcat users (versions 9 or older)
 // Use version 2.3.2 for jaxws-rt dependency

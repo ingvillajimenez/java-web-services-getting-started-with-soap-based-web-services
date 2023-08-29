@@ -16,7 +16,14 @@ public class GreetingClient {
 
         Service service = Service.create(wsdlUrl, qName);
 
-        MyWebServiceImplementation myService = service.getPort(MyWebServiceImplementation.class);
+        MyWebServiceInterface myService = service.getPort(MyWebServiceInterface.class);
+
+//        MyWebServiceImplementation myService = service.getPort(MyWebServiceImplementation.class);
+        //Exception in thread "main" jakarta.xml.ws.WebServiceException: Undefined port type: {http://jaxwsservice.com/}MyWebServiceImplementation
+        //	at com.sun.xml.ws.client.WSServiceDelegate.getPort(WSServiceDelegate.java:442)
+        //	at com.sun.xml.ws.client.WSServiceDelegate.getPort(WSServiceDelegate.java:449)
+        //	at jakarta.xml.ws.Service.getPort(Service.java:210)
+        //	at client.GreetingClient.main(GreetingClient.java:19)
 
         System.out.println(myService.myGreetingMessage("Alice"));
 
